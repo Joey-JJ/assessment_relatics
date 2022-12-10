@@ -1,5 +1,5 @@
-import { Button } from "flowbite-react";
 import React from "react";
+import { Button } from "flowbite-react";
 
 interface Props {
   name: string;
@@ -12,7 +12,7 @@ export const CityResult: React.FC<Props> = ({ name, country }) => {
       <h3>
         {name}, {country}
       </h3>
-      <Button>Add</Button>
+      <Button size="xs">Add</Button>
     </div>
   );
 };

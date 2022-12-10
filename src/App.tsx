@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import CitiesList from "./components/CitiesList";
-import { SearchBar } from "./components/SearchBar";
-import type { City } from "./types/City";
+import React from "react";
+import { SearchCities } from "./components/SearchCities";
 
 const App: React.FC = () => {
-  const [cities, setCities] = useState<City[]>([]);
-
   return (
     <div className="App">
-      <SearchBar setCities={setCities} />
-      <CitiesList cities={cities} />
+      <SearchCities />
     </div>
   );
 };
