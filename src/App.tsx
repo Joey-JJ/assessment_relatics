@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   return (
     <ForecastContext>
-      <div className="App">
+      <div className="App min-h-screen bg-gradient-to-b from-sky-400 to-sky-200">
         <Navbar openSearch={openSearch} setOpenSearch={setOpenSearch} />
         {openSearch && <SearchCities />}
         <Forecasts />
