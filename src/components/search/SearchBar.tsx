@@ -18,9 +18,9 @@ const SearchBar: React.FC<Props> = ({ setCities }) => {
       return;
     }
 
-    // Fetch possible cities from api
+    // Fetch possible cities from api and parse the response
     const cityResponse = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=f43255c624f037a1e2b6f0de2bf00498`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=f43255c624f037a1e2b6f0de2bf00498`
     );
 
     const cityData = await cityResponse.json();
@@ -37,7 +37,7 @@ const SearchBar: React.FC<Props> = ({ setCities }) => {
         onChange={(e) => setCity(e.target.value)}
         value={city}
       />
-      <Button>Search</Button>
+      <Button type="submit">Search</Button>
     </form>
   );
 };

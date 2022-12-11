@@ -12,8 +12,7 @@ const CitiesList: React.FC<Props> = ({ cities }) => {
       {cities.map((city: City) => (
         <CityResult
           key={city.lat.toString() + city.lon.toString()}
-          name={city.name}
-          country={city.country}
+          city={city}
         />
       ))}
     </>
