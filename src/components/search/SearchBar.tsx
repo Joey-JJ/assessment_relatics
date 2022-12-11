@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { TextInput, Button } from "flowbite-react";
-import type { City } from "../types/City";
+import type { City } from "../../types/City";
 
 interface Props {
   setCities: React.Dispatch<React.SetStateAction<City[]>>;
 }
 
-export const SearchBar: React.FC<Props> = ({ setCities }) => {
+const SearchBar: React.FC<Props> = ({ setCities }) => {
   const [city, setCity] = useState("");
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,3 +41,5 @@ export const SearchBar: React.FC<Props> = ({ setCities }) => {
     </form>
   );
 };
+
+export default SearchBar;

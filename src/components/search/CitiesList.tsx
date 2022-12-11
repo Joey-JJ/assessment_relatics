@@ -1,6 +1,6 @@
 import React from "react";
 import { CityResult } from "./CityResult";
-import type { City } from "../types/City";
+import type { City } from "../../types/City";
 
 interface Props {
   cities: City[];

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import CitiesList from "./CitiesList";
-import { SearchBar } from "./SearchBar";
-import type { City } from "../types/City";
+import SearchBar from "./SearchBar";
+import type { City } from "../../types/City";
 
-export const SearchCities = () => {
+const SearchCities = () => {
   const [cities, setCities] = useState<City[]>([]);
 
   return (
@@ -13,3 +13,5 @@ export const SearchCities = () => {
     </div>
   );
 };
+
+export default SearchCities;
