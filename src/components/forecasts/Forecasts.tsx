@@ -7,7 +7,7 @@ const Forecasts: React.FC = () => {
   const { addedForecasts } = useForecastContext();
 
   return (
-    <div className="grid">
+    <div className="grid container mx-auto place-content-center md:grid-cols-2 lg:grid-cols-3">
       {addedForecasts.map((forecast: City) => (
         <ForecastCard
           key={forecast.lat.toString() + forecast.lon.toString()}
