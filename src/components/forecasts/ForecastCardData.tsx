@@ -10,19 +10,27 @@ interface Props {
 const ForecastCardData: React.FC<Props> = ({ forecastData, city }) => {
   return (
     <div className="flex flex-col text-sm">
-      <h2 className="text-lg font-bold">
+      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {city.name}, {city.country}
-      </h2>
-      <h3 className="text-slate-300 border-b border-slate-300 mb-2">
+      </h5>
+      <p className="font-normal text-gray-700 dark:text-gray-400 border-b pb-2 mb-4">
         {forecastData.weather[0].description.charAt(0).toUpperCase() +
           forecastData.weather[0].description.slice(1)}
-      </h3>
-      <ul>
-        <li>Temp.: {forecastData.main.temp}</li>
-        <li>Min: {forecastData.main.temp_min}</li>
-        <li>Max: {forecastData.main.temp_max}</li>
-        <li>Feels like: {forecastData.main.feels_like}</li>
-        <li>Pressure: {forecastData.main.pressure}</li>
+      </p>
+      <ul className="font-normal text-gray-700 dark:text-gray-400 list-disc ml-4">
+        <li>
+          Temp.: {forecastData.main.temp} {"\u00b0"}C
+        </li>
+        <li>
+          Min: {forecastData.main.temp_min} {"\u00b0"}C
+        </li>
+        <li>
+          Max: {forecastData.main.temp_max} {"\u00b0"}C
+        </li>
+        <li>
+          Feels like: {forecastData.main.feels_like} {"\u00b0"}C
+        </li>
+        <li>Pressure: {forecastData.main.pressure} Pa</li>
         <li>Humidity: {forecastData.main.humidity}%</li>
       </ul>
     </div>

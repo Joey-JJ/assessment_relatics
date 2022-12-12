@@ -26,7 +26,7 @@ const ForecastCard: React.FC<Props> = ({ city }) => {
     const fetchForecast = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=f43255c624f037a1e2b6f0de2bf00498`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=f43255c624f037a1e2b6f0de2bf00498`
         );
         const data = await response.json();
         const { main, weather } = data;
@@ -47,10 +47,7 @@ const ForecastCard: React.FC<Props> = ({ city }) => {
   }
 
   return (
-    <Card
-      className="m-4 w-80 sm:w-60 bg-slate-900/80 text-white border-black"
-      key={seed}
-    >
+    <Card className="m-4 w-80 sm:w-60" key={seed}>
       <img
         src={`http://openweathermap.org/img/wn/${forecastData.weather[0].icon}@2x.png`}
         alt="Weather icon"
