@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "flowbite-react";
+import { Close, Search } from "../../icons/Icons";
 
 interface Props {
   openSearch: boolean;
@@ -13,14 +14,15 @@ const Navbar: React.FC<Props> = ({ openSearch, setOpenSearch }) => {
         <div>
           <h1 className="text-xl font-bold">Weather App</h1>
           <p className="text-xs text-gray-400">
-            Current weather data from anywhere!
+            Current weather data for any city!
           </p>
         </div>
         <Button
-          size={"sm"}
+          size="sm"
+          color="gray"
           onClick={() => setOpenSearch((prev: boolean) => !prev)}
         >
-          {!openSearch ? "Add city" : "Close"}
+          {!openSearch ? <Search /> : <Close />}
         </Button>
       </div>
     </nav>
