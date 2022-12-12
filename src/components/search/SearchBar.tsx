@@ -4,9 +4,10 @@ import type { City } from "../../types/City";
 
 interface Props {
   setCities: React.Dispatch<React.SetStateAction<City[]>>;
+  setHasSearched: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchBar: React.FC<Props> = ({ setCities }) => {
+const SearchBar: React.FC<Props> = ({ setCities, setHasSearched }) => {
   const [city, setCity] = useState("");
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,6 +29,8 @@ const SearchBar: React.FC<Props> = ({ setCities }) => {
       setCities(cityData);
     } catch (error: any) {
       alert(error.message);
+    } finally {
+      setHasSearched(true);
     }
   };
   return (
