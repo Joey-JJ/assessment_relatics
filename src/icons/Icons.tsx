@@ -6,7 +6,7 @@ export const Delete = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
-      className="w-4 h-4"
+      className="w-4 h-4 pr-1"
     >
       <path
         fillRule="evenodd"
