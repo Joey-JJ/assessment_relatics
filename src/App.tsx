@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import SearchCities from "./components/search/SearchCities";
 import Navbar from "./components/layout/Navbar";
 import ForecastContext from "./context/ForecastContext";
 import Forecasts from "./components/forecasts/Forecasts";
+import SearchModal from "./components/search/SearchModal";
 
 const App: React.FC = () => {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
@@ -11,8 +11,8 @@ const App: React.FC = () => {
     <ForecastContext>
       <div className="App min-h-screen bg-gradient-to-b from-gray-900 to-slate-800">
         <Navbar openSearch={openSearch} setOpenSearch={setOpenSearch} />
-        {openSearch && <SearchCities />}
         <Forecasts />
+        <SearchModal openSearch={openSearch} setOpenSearch={setOpenSearch} />
       </div>
     </ForecastContext>
   );
