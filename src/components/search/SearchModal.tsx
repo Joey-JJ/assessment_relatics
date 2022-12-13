@@ -13,10 +13,12 @@ const SearchModal: React.FC<Props> = ({ openSearch, setOpenSearch }) => {
   const [cities, setCities] = useState<City[]>([]);
   const [hasSearched, setHasSearched] = useState<boolean>(false);
 
+  // Data fetching
   useEffect(() => {
     // Prevent api call on empty input
     if (city.trim().length === 0) {
       setCities([]);
+      setHasSearched(false);
       return;
     }
 
@@ -24,7 +26,7 @@ const SearchModal: React.FC<Props> = ({ openSearch, setOpenSearch }) => {
     const timer = setTimeout(async () => {
       try {
         const cityResponse = await fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=f43255c624f037a1e2b6f0de2bf00498`
+          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${process.env.REACT_APP_API_KEY}`
         );
 
         const cityData = await cityResponse.json();

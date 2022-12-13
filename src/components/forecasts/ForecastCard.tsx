@@ -26,7 +26,7 @@ const ForecastCard: React.FC<Props> = ({ city }) => {
     const fetchForecast = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=f43255c624f037a1e2b6f0de2bf00498`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
         );
         const data = await response.json();
         const { main, weather } = data;
