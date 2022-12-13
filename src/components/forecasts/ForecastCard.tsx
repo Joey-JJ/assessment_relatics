@@ -49,7 +49,7 @@ const ForecastCard: React.FC<Props> = ({ city }) => {
   return (
     <Card className="m-4 w-80" key={seed}>
       <img
-        src={`http://openweathermap.org/img/wn/${forecastData.weather[0].icon}@2x.png`}
+        src={`https://openweathermap.org/img/wn/${forecastData.weather[0].icon}@2x.png`}
         alt="Weather icon"
         className="w-15 h-15 mx-auto"
       />

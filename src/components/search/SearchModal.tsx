@@ -26,7 +26,7 @@ const SearchModal: React.FC<Props> = ({ openSearch, setOpenSearch }) => {
     const timer = setTimeout(async () => {
       try {
         const cityResponse = await fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${process.env.REACT_APP_API_KEY}`
+          `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=${process.env.REACT_APP_API_KEY}`
         );
 
         const cityData = await cityResponse.json();
